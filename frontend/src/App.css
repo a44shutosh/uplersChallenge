@@ -1,0 +1,142 @@
+/* App.css */
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px; /* Doubled the padding */
+  background: linear-gradient(135deg, #fbc02d 0%, #8bc34a 100%); /* Yellow-green gradient */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+input {
+  margin: 10px 0;
+  padding: 15px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.1em;
+}
+
+button {
+  padding: 15px 30px;
+  background-color: #ffeb3b; /* Yellow button */
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #fbc02d; /* Darker yellow on hover */
+  transform: translateY(-2px);
+}
+
+.product-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Ensures content is centered vertically */
+  padding: 20px;
+  background: linear-gradient(135deg, hsl(43, 96%, 58%) 0%, #8bc34a 100%);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+
+
+
+.product-list {
+  background: linear-gradient(135deg, #070601 0%, #efefee 100%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 50vh; /* Ensures minimum height is half of the viewport height */
+  min-width: 50vw; /* Ensures minimum width is half of the viewport width */
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.product-item {
+  background: linear-gradient(135deg, #fbc02d 0%, #8bc34a 100%);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(100% / 3 - 40px); /* Adjust the width based on your grid layout */
+  max-width: 200px; /* Max width to ensure consistency */
+  text-align: center;
+  margin: 20px; /* Adjust margin for spacing */
+  transition: box-shadow 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .product-item {
+    width: calc(100% / 2 - 40px); /* Two items per row on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .product-item {
+    width: calc(100% - 40px); /* Single item per row on mobile */
+  }
+}
+
+
+.product-item:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .login-container,
+  .product-list-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  input,
+  button {
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  .product-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}
