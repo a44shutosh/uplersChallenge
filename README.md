@@ -7,7 +7,7 @@ step 2. Install dependencies:<br />
      For frontend: cd frontend && npm install<br />
 Step 3. Run the application:<br />
      For backend: npm start<br />
-     For frontend: npm start<br />
+     For frontend: npm run dev<br />
 Step 4. Access the application at http://localhost:5173<br />
 <br />
 Credential to login :- Username:- ashutosh , Password:- ashutosh
