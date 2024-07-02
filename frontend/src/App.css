@@ -15,9 +15,7 @@ body {
 }
 
 .App {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .login-container {
@@ -74,10 +72,8 @@ button:hover {
   box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
 }
 
-
-
 .product-list {
-  background: linear-gradient(135deg, #070601 0%, #efefee 100%);
+  background: linear-gradient(135deg, #362e06 0%, #efefee 100%);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -85,42 +81,47 @@ button:hover {
   min-width: 50vw; /* Ensures minimum width is half of the viewport width */
   gap: 20px;
   padding: 20px;
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+  position: relative; /* For search box positioning */
 }
 
+.product-list p {
+  color: white;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.1em;
+}
 
 .product-item {
   background: linear-gradient(135deg, #fbc02d 0%, #8bc34a 100%);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: calc(100% / 3 - 40px); /* Adjust the width based on your grid layout */
-  max-width: 200px; /* Max width to ensure consistency */
+  width: calc(33.333% - 40px); /* Adjust the width based on your grid layout */
+  max-width: 300px; /* Max width to ensure consistency */
   text-align: center;
-  margin: 20px; /* Adjust margin for spacing */
+  margin: 10px; /* Adjust margin for spacing */
   transition: box-shadow 0.3s ease;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width */
 }
 
 @media (max-width: 1200px) {
   .product-item {
-    width: calc(100% / 2 - 40px); /* Two items per row on smaller screens */
+    width: calc(50% - 40px); /* Two items per row on smaller screens */
   }
-}
-
-@media (max-width: 600px) {
-  .product-item {
-    width: calc(100% - 40px); /* Single item per row on mobile */
-  }
-}
-
-
-.product-item:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 600px) {
   .login-container,
   .product-list-container {
-    padding: 15px;
+    padding: 0; /* Remove padding for mobile view */
     max-width: 100%;
   }
 
@@ -128,15 +129,26 @@ button:hover {
   button {
     padding: 12px;
     font-size: 1em;
+    width: fit-content;
   }
 
   .product-list {
     flex-direction: column;
     align-items: center;
+    padding: 0; /* Remove padding for mobile view */
   }
 
   .product-item {
-    width: 100%;
-    max-width: 300px;
+    width: calc(100% - 40px); /* Full width for mobile view */
+    max-width: none; /* Remove max-width constraint */
+    margin: 10px 0; /* Adjust margin for spacing */
   }
+
+  .search-box {
+    width: calc(100% - 40px);
+  }
+}
+
+.product-item:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
